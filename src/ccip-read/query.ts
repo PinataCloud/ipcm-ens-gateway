@@ -1,4 +1,4 @@
-import { createPublicClient, http } from 'viem'
+import { createPublicClient, http, stringToHex } from 'viem'
 import { base } from 'viem/chains'
 import { ResolverQuery } from './utils'
 import { abi } from "./ipcm-abi";
@@ -17,12 +17,12 @@ export async function getRecord(query: ResolverQuery) {
     }
 
     const mapping = await publicClient.readContract({
-      address: "0xFBA3912Ca04dd458c843e2EE08967fC04f3579c2",
+      address: "0xD5B0CE88928569Cdc4DBF47F0A4a1D8B31f6311D",
       abi: abi,
       functionName: "getMapping",
     });
 
-    return mapping as string
+    return mapping
   } catch (err) {
     return ''
   }
