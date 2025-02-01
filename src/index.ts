@@ -43,6 +43,7 @@ app.get('/lookup/:sender/:data', async (c) => {
     c.env.PRIVATE_KEY
   )
 
+  console.log("Full response to resolver: ", encodedResponse)
   return c.json({ data: encodedResponse }, 200)
 })
 
